@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" media="all" type="text/css">
+        <meta charset="utf-8">
+     
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+        <title>Game Shop</title>
+        
+        <style>
+            
+            nav {
+                padding: 0px;
+                height: 80px;
+               
+                font-family: 'Times New Roman', serif;
+                background-color: #247D85;
+                margin: -8px;
+            }
+
+            nav ul {
+                float: right;
+            }
+
+            nav ul li {
+                display: inline-block;
+                float: left;
+            }
+
+            nav ul li:not(:first-child) {
+                margin-left: 48px;
+            }
+
+            nav ul li:last-child {
+                margin-right: 24px;
+            }
+
+            nav ul li a {
+                display: inline-block;
+                outline: none;
+                color: #FFFFFF;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-family: 'Lato', sans-serif; 
+                font-size: 14px;
+                letter-spacing: 1px;
+                font-weight: 600;
+                opacity: 0.5;
+                transition: 0.3s;
+
+            }
+
+            nav ul li a:hover {
+
+                
+                opacity: 1;
+
+                }
+
+         
+
+            .active {
+                opacity: 1;
+            }
+
+            body{
+                background-color: solid white;
+            }
+
+            .topnav input[type=text] {
+                padding: 6px;
+                margin-top: 5px;
+                font-size: 17px;
+                border: none;
+            }
+            .topnav .search-container button {
+                float: right;
+                padding: 6px 10px;
+                margin-top: 8px;
+                margin-right: 16px;
+                background: #ddd;
+                font-size: 17px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .topnav .search-container {
+                float: right;
+            }
+
+            .topnav .search-container button:hover {
+                background: #ccc;
+            }
+
+            @media screen and (max-width: 600px) {
+            .topnav .search-container {
+                float: none;
+            }
+            .topnav a, .topnav input[type=text], .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+            .topnav input[type=text] {
+                border: 1px solid #ccc;  
+            } 
+            } 
+
+        </style>
+    </head>
+
+<body>
+<nav>
+            <div class="container">
+                <a href="itemlist.html">
+                <img src="img/IIUM.png" alt="IIUM logo" style="float: left; width: 480px; height: 80px; margin-left: 30px; margin-top: 5px">
+                </a>
+
+            
+                <div class="topnav">
+                    <ul>
+                        <li><a class="active" href="itemlist.html">Item List</a></li>
+                        <li><a href=>Kuliyyah</a></li>
+                        <li><a href=>Mahallah</a></li>
+                        <li><a href=>Stadd</a></li>
+                        <li><a  href=>Contact us</a></li>
+                        <li> <div class="search-container">
+                            <form action="/action_page.php">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button></form></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+<div align="center">
+    <div class="title">
+       <h1> </h1>
+    </div>
+
+<br>
+<br>
+
+
+</div>
+</body>
+</html>
