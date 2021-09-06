@@ -22,13 +22,11 @@
     align-items: center;
     background-color: #247D85;
 }
-nav {
+.page1 nav {
     display: flex;
     padding: 1% 4%;
     justify-content: space-between;
     align-items: center;
-    
-    
 }
 nav img{
     width: 500px;
@@ -313,7 +311,7 @@ img[src*="login.png"] {
 .form button {
         margin: 50px 0;
         width: 100%;
-        background-color: #677578; /* Green */
+        background-color: #677578;
         border: none;
         color: black;
         padding: 10px 100px;
@@ -330,3 +328,4 @@ img[src*="login.png"] {
 .forgot-password{
     font-size: 10px;
 }
+
