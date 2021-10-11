@@ -529,7 +529,7 @@ margin-left: 3%;
 .bookingform .header{
     min-height: 65vh;
     width: 100%;
-    background-image:repeating-linear-gradient(rgba(133, 133, 131, 0.26),rgba(133, 133, 131, 0.26)), url(img/bookingform.png);
+    background-image:repeating-linear-gradient(rgba(133, 133, 131, 0.26),rgba(133, 133, 131, 0.26)), url(img/Main.png);
     background-position: center;
     background-size: cover;
     position: relative;
