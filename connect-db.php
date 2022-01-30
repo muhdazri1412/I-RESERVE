@@ -2,6 +2,6 @@
 
 $con = mysqli_connect('localhost','root','');
 
-mysqli_select_db($con, 'userregistration' );
+mysqli_select_db($con, 'ireserve' );
 
  ?>
