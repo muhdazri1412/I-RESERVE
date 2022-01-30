@@ -425,7 +425,7 @@ margin-left: 3%;
 .venueimage {
     width: 50%;
     height:55%; 
-    position: absolute;
+  
     margin-right:25%;
     margin-left:25%;
     margin-top: 3%;
@@ -643,7 +643,7 @@ form .btn-submit input:hover{
              margin-bottom: 15px;
              width: 100%;
            }
-           form .category{
+           form .Prog_category{
              width: 100%;
            }
            .content form .bform-details{
@@ -1325,6 +1325,8 @@ input[type="checkbox"]{
     border: none;
 
 }
+
+
 
 .btn-supportdocs:hover{
     transform: scale(1.15);
