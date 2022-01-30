@@ -74,6 +74,7 @@
 
 <div class="upload-container">
 <div class="upload-docs">
+<<<<<<< HEAD
 <form class="" action="supporting_controller.php" method="post" enctype="multipart/form-data">
         <label for="">Choose Your PDF File</label><br>
         <input type="file" name="pdf" required><br><br>
@@ -87,6 +88,27 @@
 
     
 
+=======
+<form class="" action="insert.php" method="post">
+    <span>Drag and drop your documents here</span>
+
+
+
+</form>
+    
+    
+    
+
+</div>
+
+<div class="btn-sd-location">
+<button class="adddocs"><a href="bookingform.html">Add Documents</a></button>
+<button class="cancel"><a href="bookingform.html">Cancel</a></button>
+</div>
+
+</div>
+
+>>>>>>> d8885423570e832a18b088347d287541efddae6d
 
 
 
@@ -98,4 +120,8 @@
 <style>
 
 </style>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> d8885423570e832a18b088347d287541efddae6d
