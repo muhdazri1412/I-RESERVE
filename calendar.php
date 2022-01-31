@@ -1,7 +1,7 @@
 <?php
 function build_calendar($month, $year) {
     include('connect-db.php');
-    $mysqli = new mysqli('localhost', 'root','','i-reserve');
+    $mysqli = new mysqli('localhost', 'root','','ireserve');
    
     
     

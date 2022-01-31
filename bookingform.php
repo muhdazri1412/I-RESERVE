@@ -18,7 +18,6 @@
         }
     }
 
-<<<<<<< HEAD
     .btn-submit .button
 {
    position:relative;
@@ -43,8 +42,6 @@ text-align: center;
 }
 
 
-=======
->>>>>>> d8885423570e832a18b088347d287541efddae6d
 
     </style>
 

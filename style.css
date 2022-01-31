@@ -22,6 +22,25 @@
     align-items: center;
     background-color: #247D85;
 }
+.login .nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13;
+
+ 
+}
+.login .nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+
+
+}
+
 .page1 nav {
     display: flex;
     padding: 1% 4%;
@@ -50,13 +69,7 @@ nav img{
  
 }
 
-.login .nav-links ul li a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 13;
 
- 
-}
 .nav-links ul li::after{
     content: '';
     width: 0%;
@@ -68,17 +81,7 @@ nav img{
 
 
 }
-.login .nav-links ul li::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #fff;
-    display: block;
-    margin: auto;
-    transition: 0.3s;
 
-
-}
 .nav-links ul li:hover::after{
     width: 100%;
 
@@ -1348,4 +1351,16 @@ text-align: center;
     width:120vh;
     left:15%;
 
+}
+
+.admin .form-container{
+    position: absolute;
+    left:15%;
+    top:20%;
+    max-width: 40%;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    
 }

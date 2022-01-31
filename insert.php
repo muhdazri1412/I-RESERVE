@@ -104,9 +104,8 @@ else
 {
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
 }
- 
-// Close connection
-mysqli_close($con);
+
+
 ?>
   
 </div>
