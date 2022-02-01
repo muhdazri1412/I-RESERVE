@@ -1,7 +1,45 @@
 <?php
-function build_calendar($month, $year) {
+function build_calendar($month, $year,$venues) {
     include('connect-db.php');
-    $mysqli = new mysqli('localhost', 'root','','i-reserve');
+    $mysqli = new mysqli('localhost', 'root','','ireserve');
+
+
+    $stmt = $mysqli->prepare('select * from venue');
+    $venue  = "";
+    $first_venue = 0;
+    $i=0;
+    if($stmt->execute()){
+        $result = $stmt->get_result();
+        if($result->num_rows>0){
+            while($row = $result -> fetch_assoc()){
+                if($i==0){
+                    $first_venue=$row['id'];
+                }
+                $venue.="<option value= '".$row['id']."'>".$row['name']."</option>";
+                $i++;
+            }
+            $stmt->close();
+        }
+    }
+
+    if($venues!=0){
+        $first_venue= $venues;
+    }
+
+    $stmt = $mysqli->prepare('select * from bookings where MONTH(date)=
+    ? AND YEAR(date) = ? AND venue_id=?');
+    $stmt->bind_param('ssi',$month,$year,$first_venue);
+    $bookings = array();
+    if($stmt-> execute()){
+        $result = $stmt->get_result();
+        if($result->num_rows>0){
+            while($row = $result ->fetch_assoc()){
+                $bookings[]  = $row['date'];
+
+            }
+            $stmt->close();
+        }
+    }
    
     
     
@@ -41,10 +79,28 @@ function build_calendar($month, $year) {
     
     
         
-      $calendar .= "<tr>";
+      $calendar.="
+
+
+<form id='venue_select_form'>
+      <div class='row'>
+          <div class='col-md-6 col-md-offset-3 form-group'>
+          <label>Select Venue</label>
+              <select class='form-control' id='venue_select' name='venues'>
+              ".$venue."
+              </select>
+              <input type='hidden' name='month' value='".$month."'>
+              <input type='hidden' name='year' value='".$year."'>
+          </div>
+      </div>
+  </form>
+  
+  
+  <table class= 'table table-bordered'>";
+
 
      // Create the calendar headers
-
+     $calendar .="<tr>";
      foreach($daysOfWeek as $day) {
           $calendar .= "<th  class='header'>$day</th>";
      } 
@@ -157,6 +213,7 @@ function checkSlots($con,$date){
 }
     
 ?>
+
 
 <html>
 
@@ -290,16 +347,32 @@ function checkSlots($con,$date){
                          $month = $dateComponents['mon']; 			     
                          $year = $dateComponents['year'];
                      }
-                    echo build_calendar($month,$year);
+
+                     if(isset($_GET['venues'])){
+                         $venues = $_GET['venues'];
+                     }else{
+                         $venues=0;
+                     }
+                     
+
+
+                     echo build_calendar($month,$year,$venues);
                 ?>
             </div>
         </div>
     </div>
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.js"
+			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			  crossorigin="anonymous"></script>
+    <script>
+        $("#venue_select").change(function(){
+            $("#venue_select_form").submit();
+        })
 
-
-<div class="legend">
-    span 
-</div>
+        $("#venue_select option[value='<?php echo $venues; ?>']").attr('selected','selected');
+        
+    </script>
 
 </body>
 

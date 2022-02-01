@@ -176,6 +176,7 @@ foreach($timeslots as $ts){
                                <div class="form-group">
                                     <label for="">Time Slot</label>
                                     <input readonly type="text" class="form-control" id="timeslot" name="timeslot">
+                                    <label for="">Email</label>
                                 </div>
                                 <div class="form-group pull-right">
                                     <button name="submit" type="submit" class="btn btn-primary" href="bookingform.html">Continue</button>
