@@ -1,5 +1,4 @@
 <?php 
-
 include('connect-db.php');
 
 
@@ -105,6 +104,8 @@ include('connect-db.php');
 </div>
 
 <div class="venuedetails">
+
+
     <ul>
         <li><h3>Venue Details</h3></li>
        
