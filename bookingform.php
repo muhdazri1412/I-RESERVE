@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,7 +114,7 @@ text-align: center;
           </div>
           <div class="input-box">
             <span class="details"><span style="color:red;">*</span>User ID</span>
-            <input type="text" name="User_matric" placeholder="181XXXX" required>
+            <input readonly type="text" name="User_matric" placeholder="<?php echo $_SESSION["matricno"]?>" id="matricno" required>
           </div>
           <div class="input-box">
             <span class="details"><span style="color:red;">*</span>Mobile No.</span>
@@ -178,7 +182,7 @@ text-align: center;
             </div>
 
 
-            <button class="btn-supportdocs"><a href="supportingdocs.html">Add Supporting Documents here</a></button><p></p>
+            <button class="btn-supportdocs"><a href="supportingdocs.php">Add Supporting Documents here</a></button><p></p>
 
 
             <input id="agreebox" type="checkbox" required>
