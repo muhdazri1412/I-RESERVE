@@ -67,14 +67,13 @@
 
 
 
-<button type="button" class="btn-back"><a href="bookingform.html"><ion-icon size="large"name="arrow-back-outline"></ion-icon></a></button>
+<button type="button" class="btn-back"><a href="bookingform.php"><ion-icon size="large"name="arrow-back-outline"></ion-icon></a></button>
 
 <div id="title-supportdocs">Supporting Documents</div>
 <span id="descr-upload">Documents uploaded in the form of <span style="color:red">PDF</span> only<br>Maximum file size: 10MB ; maximum number of files;5<br>Please provide the relevant <span style="color:red">event proposal</span> and <span style="color:red"></span>event proposal</span></span>
 
 <div class="upload-container">
 <div class="upload-docs">
-<<<<<<< HEAD
 <form class="" action="supporting_controller.php" method="post" enctype="multipart/form-data">
         <label for="">Choose Your PDF File</label><br>
         <input type="file" name="pdf" required><br><br>
@@ -83,32 +82,16 @@
 
 </form>
 
-</DIV>
-</DIV>
-
-    
-
-=======
-<form class="" action="insert.php" method="post">
-    <span>Drag and drop your documents here</span>
 
 
-
-</form>
-    
-    
-    
-
+    </div>
+    <div class="footerz">
+    <br>
 </div>
+    </div>
 
-<div class="btn-sd-location">
-<button class="adddocs"><a href="bookingform.html">Add Documents</a></button>
-<button class="cancel"><a href="bookingform.html">Cancel</a></button>
-</div>
+    
 
-</div>
-
->>>>>>> d8885423570e832a18b088347d287541efddae6d
 
 
 
@@ -120,8 +103,4 @@
 <style>
 
 </style>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> d8885423570e832a18b088347d287541efddae6d
