@@ -1,4 +1,5 @@
 <?php
+session_start();
 function build_calendar($month, $year,$venues) {
     include('connect-db.php');
     $mysqli = new mysqli('localhost', 'root','','ireserve');
@@ -154,7 +155,7 @@ function build_calendar($month, $year,$venues) {
             if($totalbookings==9){
                 $calendar.="<td class='$today calendararea calendarfull'><h4>$currentDay</h4> <a href='#' class='btn btn-danger btn-xs'>Fully Booked</a>";
             }else{
-                $calendar.="<td class='$today calendararea'><h4>$currentDay</h4> <a href='book.php?date=".$date."' class='btn btn-success btn-xs'>Available slots</a>";
+                $calendar.="<td class='$today calendararea'><h4>$currentDay</h4> <a href='book.php?date=$date&venue=$venues' class='btn btn-success btn-xs'>Available slots</a>";
             }
              
          }
