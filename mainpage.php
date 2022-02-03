@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+
 
 ?>
 
@@ -34,7 +34,7 @@ session_start();
 
         </nav>
 <div class="text-box">
-    <p>Welcome to</p>
+    <p><?php echo $_SESSION["matricno"] ?> Welcome to</p>
     <h1>I-RESERVE</h1>
     <p>IIUM venue and property reservation system</p>
     <br>
@@ -50,8 +50,8 @@ session_start();
     <h1>Categories</h1>
 
     <div class = "row">
-        <div class = "kul-col" onclick="location.href='kulliyah.html';" style="cursor: pointer;">
-            <h3 ;>Kuliyyah</h3>
+        <div class = "kul-col" onclick="location.href='kulliyah.php';" style="cursor: pointer;">
+            <h3>Kuliyyah</h3>
 
 
         </div>
