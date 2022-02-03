@@ -1,4 +1,5 @@
 
+
 <html>
 <head>
         <meta name="viewport" content="with=device-width,initial-scale=1.0 ">
@@ -69,6 +70,8 @@
 
 <div align="center">
 <?php
+session_start();
+
 
 $con= mysqli_connect("localhost","root","","ireserve") or die ("could not connect to mysql");
 
@@ -76,7 +79,7 @@ $con= mysqli_connect("localhost","root","","ireserve") or die ("could not connec
 $User_fname = mysqli_real_escape_string($con, $_REQUEST['User_fname']);
 $User_lname = mysqli_real_escape_string($con, $_REQUEST['User_lname']);
 $User_email = mysqli_real_escape_string($con, $_REQUEST['User_email']);
-$User_matric = mysqli_real_escape_string($con, $_REQUEST['User_matric']);
+$matricno = $_SESSION['matricno'];
 $User_phone = mysqli_real_escape_string($con, $_REQUEST['User_phone']);
 $User_advisor = mysqli_real_escape_string($con, $_REQUEST['User_advisor']);
 $User_address = mysqli_real_escape_string($con, $_REQUEST['User_address']);
@@ -85,10 +88,14 @@ $Prog_name = mysqli_real_escape_string($con, $_REQUEST['Prog_name']);
 $Prog_type = mysqli_real_escape_string($con, $_REQUEST['Prog_type']);
 $part_tot = mysqli_real_escape_string($con, $_REQUEST['part_tot']);
 $Prog_cat = mysqli_real_escape_string($con, $_REQUEST['Prog_cat']);
+
+
+$book_id = $mysqli->prepare('select id from bookings where matricno=$matricno');
+
 //Attempt insert query execution
 
-$sql = "INSERT INTO form (User_fname,User_lname,User_email,User_matric,User_phone,User_advisor,User_address,User_org,Prog_name,Prog_type,part_tot,Prog_cat) VALUES 
-('$User_fname','$User_lname','$User_email','$User_matric','$User_phone','$User_advisor','$User_address','$User_org','$Prog_name','$Prog_type','$part_tot','$Prog_cat' )";
+$sql = "INSERT INTO form (book_id,User_fname,User_lname,User_email,matricno,User_phone,User_advisor,User_address,User_org,Prog_name,Prog_type,part_tot,Prog_cat) VALUES 
+('$book_id','$User_fname','$User_lname','$User_email','$matricno','$User_phone','$User_advisor','$User_address','$User_org','$Prog_name','$Prog_type','$part_tot','$Prog_cat' )";
 //Execute query
 if(mysqli_query($con, $sql))
 {
