@@ -44,7 +44,7 @@
             <button type="submit" class="button">Login</button>
             <a href="" class="liaison-login"> Login for Liaison officer</a><br>
             <a href="" class="guest-login"> Login for  IIUM Guest</a><br>
-            <a href="signup.html" class="create-account">Create an account</a><br>
+            <a href="registration-page.php" class="create-account">Create an account</a><br>
             <a href="password-reset-page.php" class="forgot-password">Forgot password? Start password recovery</a>
           </form>
         </div>
