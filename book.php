@@ -1,11 +1,14 @@
 <?php 
+session_start();
 include('connect-db.php');
 
 
-if(isset($_GET['date'])){
+if(isset($_GET['date']) ){
     $date = $_GET['date'];
+    
+    
 
-    $stmt = $con->prepare("select * from bookings where date = ?");
+    $stmt = $con->prepare("select * from bookings where date = ? ");
     $stmt->bind_param('s', $date);
     $bookings = array();
     if($stmt->execute()){
@@ -21,12 +24,32 @@ if(isset($_GET['date'])){
     
 }
 
+
+   
+
+/*
+if(isset($_GET['venues'])){
+    $venues = $_GET['venues'];
+
+  
+}else{
+    $venues =0;
+}
+
+*/
+
+$venuechosen = $_GET['venue'];
+echo $venuechosen;
+
 if(isset($_POST['submit'])){
    
+    
     $timeslot = $_POST['timeslot'];
-
-    $stmt = $con->prepare("select * from bookings where date = ? AND timeslot=?");
-    $stmt->bind_param('ss', $date,$timeslot);
+    
+  
+    
+    $stmt = $con->prepare("select * from bookings where date = ? AND timeslot=? AND venue_id = ?");
+    $stmt->bind_param('ssi', $date,$timeslot,$venuechosen);
    
     
 
@@ -38,12 +61,13 @@ if(isset($_POST['submit'])){
 
         }else{
 
-            $stmt = $con->prepare("INSERT INTO bookings (date,timeslot) VALUES (?,?)");
-            $stmt->bind_param('ss',$date, $timeslot);
+            $stmt = $con->prepare("INSERT INTO bookings (matricno,date,timeslot,venue_id) VALUES (?,?,?,?)");
+            $stmt->bind_param('sssi',$_SESSION['matricno'],$date, $timeslot,$venuechosen);
             $stmt->execute();
             $msg = "<div class='alert alert-success'>Booking Successfull</div>";
             $bookings[]=$timeslot;
-            header('Location:bookingform.html');
+
+            header('Location:bookingform.php');
             $stmt->close();
             $con->close();
 
@@ -125,11 +149,6 @@ foreach($timeslots as $ts){
 ?>
 
 
-    
-
-
-        
-
             <?php if (in_array($ts, $bookings)){ ?>
 
         
@@ -176,7 +195,8 @@ foreach($timeslots as $ts){
                                <div class="form-group">
                                     <label for="">Time Slot</label>
                                     <input readonly type="text" class="form-control" id="timeslot" name="timeslot">
-                                    <label for="">Email</label>
+                                    
+                                    
                                 </div>
                                 <div class="form-group pull-right">
                                     <button name="submit" type="submit" class="btn btn-primary" href="bookingform.html">Continue</button>
